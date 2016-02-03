@@ -27,7 +27,7 @@ body {
 }
 
 .games li {
-  display: inline-block;
+  display: inline-table;
   clear: both;
   height: 230px;
   width: 230px;
