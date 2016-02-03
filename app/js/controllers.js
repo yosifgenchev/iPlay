@@ -2,18 +2,18 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var gamecatControllers = angular.module('gamecatControllers', []);
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
+gamecatControllers.controller('GameListCtrl', ['$scope', 'Game',
+  function($scope, Game) {
+    $scope.games = Game.query();
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+gamecatControllers.controller('GameDetailCtrl', ['$scope', '$routeParams', 'Game',
+  function($scope, $routeParams, Game) {
+    $scope.game = Game.get({gameId: $routeParams.gameId}, function(game) {
+      $scope.mainImageUrl = game.images[0];
     });
 
     $scope.setImage = function(imageUrl) {

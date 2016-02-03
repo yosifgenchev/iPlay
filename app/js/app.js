@@ -4,25 +4,25 @@
 
 var iPlayApp = angular.module('iPlayApp', [
   'ngRoute',
-  'phonecatAnimations',
+  'gamecatAnimations',
 
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
+  'gamecatControllers',
+  'gamecatFilters',
+  'gamecatServices'
 ]);
 
 iPlayApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+      when('/games', {
+        templateUrl: 'partials/game-list.html',
+        controller: 'GameListCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/games/:gameId', {
+        templateUrl: 'partials/game-detail.html',
+        controller: 'GameDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/games'
       });
   }]);
